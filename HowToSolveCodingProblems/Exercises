@@ -1,0 +1,36 @@
+------------------------------------ Problem 1 Notes ------------------------------------
+Given 2 arrays, create a function that lets a user know (true/false) whether
+these two arrays contain any common items.
+Ex 1.
+array1 = ['a', 'b', 'c', 'x']
+array2 = ['z', 'y', 'i']
+should return False
+
+Ex 2.
+array1 = ['a', 'b', 'c', 'x']
+array2 = ['z', 'y', 'x']
+should return True
+
+Inputs: array1 and array2
+Output = boolean
+Find if there is a shared item between the two arrays
+
+Q's:
+How are they stored? What type of data structure?
+Are they sorted?
+Can they be a mix of chars, strings, ints, etc.?
+How large will the array get?
+Time or Space complexity more important?
+
+
+A:
+Brute Force: O(n*m) nested for loop comparing each item of the two arrays against each other and checking to see if
+they are the same item
+Not the best because this is a nested for loop that costs n*m
+
+Better Answer: iterate through the first array and hash and store all values of array indeces into a hashtable. Then,
+iterate through second array and hash each item and compare to see if the hash matches any hash within the hashtable.
+If it does, return true, if not return false.
+O(n+m)
+
+
