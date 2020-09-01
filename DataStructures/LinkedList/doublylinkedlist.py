@@ -1,6 +1,6 @@
 from DataStructures import Node
-class LinkedList():
-    def __init__(self):
+class DoublyLinkedList():
+    def __iter__(self):
         self.head = None
         self.tail = None
 
@@ -11,6 +11,10 @@ class LinkedList():
             node = self.head
             nodes = ""
             while node.next != None:
+                if node.prev is None:
+                    pass
+                else:
+                    nodes += F"{node.prev.data} <- "
                 nodes += F"{node.data} -> "
                 node = node.next
             nodes += F"{node.data} -> "
@@ -22,10 +26,13 @@ class LinkedList():
         if self.head is None:
             self.head = node
             self.head.next = None
+            self.head.prev = None
         if self.tail is None:
             self.tail = node
             self.tail.next = None
+            self.tail.prev = None
         else:
+            self.head.prev = node
             node.next = self.head
             self.head = node
 
@@ -34,10 +41,13 @@ class LinkedList():
         if self.head is None:
             self.head = node
             self.head.next = None
+            self.head.prev = None
         if self.tail is None:
             self.tail = node
             self.tail.next = None
+            self.tail.prev = None
         else:
+            node.prev = self.tail.prev
             self.tail.next = node
             self.tail = node
 
@@ -50,6 +60,7 @@ class LinkedList():
                 cur_node = cur_node.next
         return None
 
+# Not fully implemented as doubly linked list
     def insert(self, index, data):
         node = Node(data=data)
         cur_node = self.head
@@ -57,6 +68,7 @@ class LinkedList():
         while cur_index < index - 1 and cur_node is not None: #O(n)
             cur_node = cur_node.next
             cur_index += 1
+        cur_node.prev = node
         node.next = cur_node.next
         cur_node.next = node
 
@@ -71,17 +83,3 @@ class LinkedList():
                 prev_node = cur_node
                 cur_node = cur_node.next
         return None
-
-
-
-# ------------------------ Test ------------------------
-# linked_list = LinkedList()
-# data = [1, 2, 3]
-# for num in data:
-#     linked_list.append(num)
-#
-# linked_list.insert(2, 4)
-# linked_list.remove(4)
-# print(repr(linked_list.lookup(2)))
-#
-# print(repr(linked_list))
