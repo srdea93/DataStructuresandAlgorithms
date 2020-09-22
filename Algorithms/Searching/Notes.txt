@@ -1,0 +1,5 @@
+1) Linear Search
+    - Linear Search sequentially looks through a list to find the target value if it exists
+    - O(n)
+    - Can't really be used for huge data sets
+2)

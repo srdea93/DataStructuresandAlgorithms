@@ -1,0 +1,34 @@
+When to use different sorts
+
+Comparison Sorts
+1) Insertion Sort
+    - small input
+    - items are mostly sorted
+    - uses very little space and easy to implement
+
+2) Bubble Sort
+    - Never use bubble sort
+    - only for educational purposes
+
+3) Selection Sort
+    - Don't really use selection sort
+
+4) Merge Sort (Most often Used)
+    - really good because of divide and conquer O(nlogn)
+    - Worst case is always O(nlogn)
+    - Not good for space complexity O(n)
+    - Suitable for external sorting outside of memory
+
+5) Quick Sort (Most often Used)
+    - Avg time is O(nlogn)
+    - be careful about picking pivot, if it is picked incorrectly, it can lead to O(n^2)
+    - O(logn) space complexity
+
+6) Heap Sort
+    - Similar to quick and merge sort, but better space complexity
+    - On average slower than quick sort
+    - Only use in place of Merge/Quick if you are concerned about O(n^2) time and space complexity
+
+Non-comparison Sorts (only work with integers in a restricted range)
+1) Counting Sort
+2) Radix Sort

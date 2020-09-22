@@ -1,1 +1,18 @@
-Anatomy of a Recursive Function
+Anatomy of a Recursive Function:
+2 Paths:
+    1) Recursive case - the case where the function gets called again
+        return <function call ()>
+    2) Base case - stop calling the function, nothing left to do
+        return <base case value>
+
+Steps:
+    1) identify base case
+    2) idenfity recursive case
+    3) get closer and closer and return when needed - usually have 2 returns (1 for base case and 1 for recursive case)
+
+When to use Recursion?
+    1) Everytime we are using a tree or converting something into a tree
+        a) Divided into a number of subproblems that are smaller instances of the same problem
+        b) Each instance of the subproblem is identical in nature
+        c) the solutions of the subproblem can be combined to solve the problem at hand
+    2) Divide and conquer
